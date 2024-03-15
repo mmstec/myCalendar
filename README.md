@@ -1,11 +1,12 @@
 # myCalendar
-Repositório para um projeto gerador de calendário online.
+### Repositório para um projeto gerador de calendário online.
 
-# GIT
+# Comandos GIT 
+O Git é um sistema de controle de versões distribuído (DVCS). É um software de código aberto, usado principalmente no desenvolvimento de software
 
 ### Comece criando um novo arquivo ou carregando um arquivo existente. Recomendamos que cada repositório inclua um , e .READMELICENSE.gitignore
 
-*... ou crie um novo repositório na linha de comando
+* ... ou crie um novo repositório na linha de comando
 
 echo "# myrepo" >> README.md
 git init
@@ -14,16 +15,16 @@ git commit -m "first commit"
 git remote add origin https://github.com/mmstec/myRepositorio.git
 git push -u origin main
 
-*... ou enviar por push um repositório existente a partir da linha de comando
+* ... ou enviar por push um repositório existente a partir da linha de comando
 
-git remote add origin https://github.com/loretoparisi/myrepo.git
+git remote add origin [c](https://github.com/mmstec/myRepositorio.git)
 git pull origin master --allow-unrelated-histories
 git commit -a -m "merge"
 git push -u origin master
 
-... ou importar código de outro repositório
+* ... ou importar código de outro repositório
 
-*Você pode inicializar esse repositório com código de um projeto Subversion, Mercurial ou TFS.
+Você pode inicializar esse repositório com código de um projeto Subversion, Mercurial ou TFS.
 
 ## Estados
 
@@ -46,15 +47,15 @@ git push -u origin master
 
 ### Geral
 
-As configurações do GIT são armazenadas no arquivo **.gitconfig** localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Leonardo ou *nix /home/leonardo).
+As configurações do GIT são armazenadas no arquivo **.gitconfig** localizado dentro do diretório do usuário do Sistema Operacional (Ex.: Windows: C:\Users\Documents and Settings\Morais ou *nix /home/Morais).
 
 As configurações realizadas através dos comandos abaixo serão incluídas no arquivo citado acima.
 
 ##### Setar usuário
-	git config --global user.name "Leonardo Comelli"
+	git config --global user.name "Marcos Morais"
 
 ##### Setar email
-	git config --global user.email leonardo@software-ltda.com.br
+	git config --global user.email mmstec@gmail.com
 	
 ##### Setar editor
 	git config --global core.editor vim
@@ -473,13 +474,13 @@ Depois de encontrar o commit com problema, para retornar para o *HEAD* utilize:
 
 # Como contribuir
 
-1.Fork o projeto: Faça um fork deste repositório para a sua conta do GitHub.
-2.Clone o repositório: Clone o repositório forkado para o seu ambiente local.
-3.Crie uma branch: Crie uma branch para a sua contribuição.
-4.Faça as alterações: Faça as alterações desejadas no código, documentação ou qualquer outro aspecto do projeto.
-5.Faça commit das alterações: Faça commit das suas alterações com mensagens claras e concisas.
-6.Envie as alterações: Envie as alterações para a sua branch no repositório forkado.
-7Abra um Pull Request: Abra um Pull Request descrevendo suas alterações e o problema ou recurso que elas abordam.
+1. Fork o projeto: Faça um fork deste repositório para a sua conta do GitHub.
+2. Clone o repositório: Clone o repositório forkado para o seu ambiente local.
+3. Crie uma branch: Crie uma branch para a sua contribuição.
+4. Faça as alterações: Faça as alterações desejadas no código, documentação ou qualquer outro aspecto do projeto.
+5. Faça commit das alterações: Faça commit das suas alterações com mensagens claras e concisas.
+6. Envie as alterações: Envie as alterações para a sua branch no repositório forkado.
+7. Abra um Pull Request: Abra um Pull Request descrevendo suas alterações e o problema ou recurso que elas abordam.
 
 # Diretrizes para contribuição
 
