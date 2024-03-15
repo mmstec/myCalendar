@@ -6,7 +6,7 @@ O Git é um sistema de controlo de versões distribuído (DVCS). É um software 
 
 ### Comece criando um novo arquivo ou carregando um arquivo existente. Recomendamos que cada repositório inclua um , e .READMELICENSE.gitignore
 
-*... ou crie um novo repositório na linha de comando
+* ... ou crie um novo repositório na linha de comando
  
   	git init
 	git add README.md
@@ -15,7 +15,7 @@ O Git é um sistema de controlo de versões distribuído (DVCS). É um software 
 	git push -u origin main
 
 * ... ou enviar por push um repositório existente a partir da linha de comando
-
+##
 	git remote add origin [c](https://github.com/mmstec/myRepositorio.git)
 	git pull origin master --allow-unrelated-histories
 	git commit -a -m "merge"
