@@ -2,7 +2,7 @@
 ### Repositório para um projeto gerador de calendário online.
 
 # Comandos GIT 
-O Git é um sistema de controle de versões distribuído (DVCS). É um software de código aberto, usado principalmente no desenvolvimento de software
+O Git é um sistema de controlo de versões distribuído (DVCS). É um software de código aberto, usado principalmente no desenvolvimento de software
 
 ### Comece criando um novo arquivo ou carregando um arquivo existente. Recomendamos que cada repositório inclua um , e .READMELICENSE.gitignore
 
@@ -492,7 +492,7 @@ Depois de encontrar o commit com problema, para retornar para o *HEAD* utilize:
 
 # Ajuda e suporte
 
-*Se precisar de ajuda ou tiver alguma dúvida sobre como contribuir, sinta-se à vontade para abrir uma issue ou entrar em contato diretamente com os mantenedores do projeto.
+Se precisar de ajuda ou tiver alguma dúvida sobre como contribuir, sinta-se à vontade para abrir uma issue ou entrar em contato diretamente com os mantenedores do projeto.
 
 Agradecemos antecipadamente por suas contribuições!
 
