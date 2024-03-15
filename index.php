@@ -9,11 +9,6 @@ utiliza a função verificadiadoano do código anterior para determinar o dia da
 <html lang="pt-br">
 
 <head>
-
-<meta http-equiv="refresh" content="3;URL='app.php'" />
-	
-<meta charset="utf-8">
-	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<title>MMSTEC | MyCalendar </title>
 	<meta name="author" content="Marcos Morais">
 	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
@@ -24,7 +19,6 @@ utiliza a função verificadiadoano do código anterior para determinar o dia da
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-reset.css">
 	<link rel="stylesheet" type="text/css" href="css/arjuna.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.login.css">
-    
     <style>
         .error {
 			color: #FF0000;
@@ -36,143 +30,207 @@ utiliza a função verificadiadoano do código anterior para determinar o dia da
             border-collapse: collapse;
         }
     </style>
-
 </head>
 
 <body>
-    <form method="post">
-        <label for="ano">Informe o ano:</label>
-        <input type="text" id="ano" name="ano" required>
-        <button type="submit">Gerar Calendário</button>
-    </form>
+
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        function verificadiadoano($minhadata)
-        {
-            $dd = intval(substr($minhadata, 0, 2));
-            $mm = intval(substr($minhadata, 3, 2));
-            $aaaa = intval(substr($minhadata, 6, 4));
-            $a = intval((12 - $mm) / 10);
-            $b = intval($aaaa - $a);
-            $c = intval($mm + (12 * $a));
-            $d = intval($b / 100);
-            $ee = intval($d / 4);
-            $f = intval(2 - $d + $ee);
+    function verificadiadoano($minhadata)
+    {
+        $dd = intval(substr($minhadata, 0, 2));
+        $mm = intval(substr($minhadata, 4, 2));
+        $aaaa = intval(substr($minhadata, 7, 4));
 
-            $g = intval(365.25 * $b);
-            $h = intval(30.6001 * ($c + 1));
-            $i = intval(($f + $g) + ($h + $dd) + 5);
-            $j = intval($i % 7);
+        $a = intval((12 - $mm) / 10);
+        $b = intval($aaaa - $a);
+        $c = intval($mm + (12 * $a));
+        $d = intval($b / 100);
+        $ee = intval($d / 4);
+        $f = intval(2 - $d + $ee);
 
-            switch ($j) {
-                case 0:
-                    $resposta = "SAB";
-                    break;
-                case 1:
-                    $resposta = "DOM";
-                    break;
-                case 2:
-                    $resposta = "SEG";
-                    break;
-                case 3:
-                    $resposta = "TER";
-                    break;
-                case 4:
-                    $resposta = "QUA";
-                    break;
-                case 5:
-                    $resposta = "QUI";
-                    break;
-                case 6:
-                    $resposta = "SEX";
-                    break;
-                default:
-                    $resposta = "Erro ao tentar retornar o dia da semana";
-            }
-            return $resposta;
-        }
+        $g = intval(365.25 * $b);
+        $h = intval(30.6001 * ($c + 1));
+        $i = intval(($f + $g + $h + $dd) + 5);
+        $j = intval($i % 7);
 
-        $ano = $_POST["ano"];
-    ?>
-
-        <h2>Calendário para o ano de <?php echo $ano; ?></h2>
-
-    <?php
-        for ($nummes = 1; $nummes <= 12; $nummes++) {
-            if ($nummes < 10) {
-                $mes = "0" . $nummes;
-            } else {
-                $mes = strval($nummes);
-            }
-            echo "<h3>Mês " . $mes . "</h3>";
-
-            $contador = 1;
-
-            $data = "01/" . $mes . "/" . $ano;
-            $dia = verificadiadoano($data);
-            $mat = array('');
-
-            // Preenchendo a matriz
-            $contador = 1;
-            for ($LIN = 0; $LIN < 7; $LIN++) {
-                switch ($dia) {
-                    case "DOM":
-                        $dia = "ok";
-                        $x = 1;
-                        break;
-                    case "SEG":
-                        $dia = "ok";
-                        $x = 2;
-                        break;
-                    case "TER":
-                        $dia = "ok";
-                        $x = 3;
-                        break;
-                    case "QUA":
-                        $dia = "ok";
-                        $x = 4;
-                        break;
-                    case "QUI":
-                        $dia = "ok";
-                        $x = 5;
-                        break;
-                    case "SEX":
-                        $dia = "ok";
-                        $x = 6;
-                        break;
-                    case "SAB":
-                        $dia = "ok";
-                        $x = 7;
-                        break;
-                    default:
-                        $x = 1;
-                }
-
-                for ($COL = $x - 1; $COL < 7; $COL++) {
-                    $mat[$LIN][$COL] = $contador;
-                    $contador++;
-                }
-            }
-
-            // Exibindo o calendário
-            echo "<table border='1'>";
-            echo "<tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>";
-            for ($LIN = 0; $LIN < 7; $LIN++) {
-                echo "<tr>";
-                for ($COL = 0; $COL < 7; $COL++) {
-                    echo "<td>";
-                    if ($mat[$LIN][$COL] <= cal_days_in_month(CAL_GREGORIAN, $nummes, $ano)) {
-                        echo $mat[$LIN][$COL];
-                    }
-                    echo "</td>";
-                }
-                echo "</tr>";
-            }
-            echo "</table>";
+        switch ($j) {
+            case 0:
+                return "SAB";
+            case 1:
+                return "DOM";
+            case 2:
+                return "SEG";
+            case 3:
+                return "TER";
+            case 4:
+                return "QUA";
+            case 5:
+                return "QUI";
+            case 6:
+                return "SEX";
+            default:
+                return "Erro ao tentar retornar o dia da semana";
         }
     }
+
+    function mostraCalendario($omes, $oano)
+    {
+        $mat = array_fill(1, 7, array_fill(1, 7, 0));
+        $contador = 1;
+        $dia = verificadiadoano("01/" . $omes . "/" . $oano);
+
+        // Preenchendo a matriz
+        for ($lin = 1; $lin <= 7; $lin++) {
+            switch ($dia) {
+                case "DOM":
+                    $dia = "ok";
+                    $x = 1;
+                    break;
+                case "SEG":
+                    $dia = "ok";
+                    $x = 2;
+                    break;
+                case "TER":
+                    $dia = "ok";
+                    $x = 3;
+                    break;
+                case "QUA":
+                    $dia = "ok";
+                    $x = 4;
+                    break;
+                case "QUI":
+                    $dia = "ok";
+                    $x = 5;
+                    break;
+                case "SEX":
+                    $dia = "ok";
+                    $x = 6;
+                    break;
+                case "SAB":
+                    $dia = "ok";
+                    $x = 7;
+                    break;
+                default:
+                    $x = 1;
+            }
+
+            for ($col = $x; $col <= 7; $col++) {
+                $mat[$lin][$col] = $contador;
+                $contador++;
+            }
+        }
+        
+        
+        // Escrevendo a matriz
+        echo "<pre>";
+        echo " -+--+--+--+--+--+--+\n";
+        echo " D| S| T| Q| Q| S| S|\n";
+        echo " -+--+--+--+--+--+--+\n";
+        for ($lin = 1; $lin <= 7; $lin++) {
+            for ($col = 1; $col <= 7; $col++) {
+                $numdias = cal_days_in_month(CAL_GREGORIAN, intval($omes), intval($oano));
+                if ($mat[$lin][$col] <= $numdias && $mat[$lin][$col] != 0) {
+                    printf("%2d|", $mat[$lin][$col]);
+                } else {
+                    echo "   ";
+                }
+            }
+           echo "\n";
+        }
+     
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        /*$oano = $_POST["ano"];
+        $conta = 1;
+        echo "<h1>Calendário para o ano $oano</h1>";
+        for ($nummes = 1; $nummes <= 12; $nummes++) {
+           $omes = sprintf("%02d", $nummes);
+           echo "<h2>Mês: $omes/$oano</h2>";            
+           mostraCalendario($omes, $oano);
+        }*/
+
+        // USANDO DIV para gerar 4 colunas e 3 linhas
+        //-----------------------------------------
+        $oano = $_POST["ano"];
+        $conta = 1;
+        echo "<h1>Calendário para o ano $oano</h1>";
+
+        // Abre o container do grid
+        echo "<div style=\"display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;\">";
+
+        for ($nummes = 1; $nummes <= 12; $nummes++) {
+            $omes = sprintf("%02d", $nummes);
+
+            // Abre uma nova div a cada quarta coluna
+            if ($conta % 3 == 1) {
+                echo "<div>";
+            }
+
+            echo "<h2>Mês: $omes/$oano</h2>";
+            mostraCalendario($omes, $oano);
+
+            // Fecha a div a cada quarta coluna
+            if ($conta % 3 == 0) {
+                echo "</div>";
+            }
+
+            $conta++;
+        }
+
+        // Fecha o container do grid
+        echo "</div>";
+
+
+
+
+        //USANDO UMA TABLE COM 4 COLUNAS E 3 LINHAS
+        //-----------------------------------------
+        $oano = $_POST["ano"];
+        $conta = 1;
+        echo "<h1>Calendário para o ano $oano</h1>";
+
+        // Abre a tabela
+        echo "<table>";
+
+        for ($nummes = 1; $nummes <= 12; $nummes++) {
+            $omes = sprintf("%02d", $nummes);
+
+            // Abre uma nova linha a cada quarta coluna
+            if ($conta % 4 == 1) {
+                echo "<tr>";
+            }
+
+            echo "<td>";
+            echo "<h2>Mês: $omes/$oano</h2>";
+            mostraCalendario($omes, $oano);
+            echo "</td>";
+
+            // Fecha a linha a cada quarta coluna
+            if ($conta % 4 == 0) {
+                echo "</tr>";
+            }
+
+            $conta++;
+        }
+
+        // Fecha a tabela
+        echo "</table>";
+
+    } else {
+        ?>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <label for="ano">Informe o ANO (ex: 2024): </label>
+                <input type="text" id="ano" name="ano">
+                <button type="submit">Gerar Calendário</button>
+            </form>
+        <?php
+    }
     ?>
+
+
 </body>
 
 </html>
