@@ -24,7 +24,7 @@ git push -u origin master
 
 * ... ou importar código de outro repositório
 
-*Você pode inicializar esse repositório com código de um projeto Subversion, Mercurial ou TFS.
+Você pode inicializar esse repositório com código de um projeto Subversion, Mercurial ou TFS.
 
 ## Estados
 
