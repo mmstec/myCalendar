@@ -492,7 +492,7 @@ Depois de encontrar o commit com problema, para retornar para o *HEAD* utilize:
 
 # Ajuda e suporte
 
-*Se precisar de ajuda ou tiver alguma dúvida sobre como contribuir, sinta-se à vontade para abrir uma issue ou entrar em contato diretamente com os mantenedores do projeto.
+Se precisar de ajuda ou tiver alguma dúvida sobre como contribuir, sinta-se à vontade para abrir uma issue ou entrar em contato diretamente com os mantenedores do projeto.
 
 Agradecemos antecipadamente por suas contribuições!
 
