@@ -7,13 +7,6 @@ O Git é um sistema de controlo de versões distribuído (DVCS). É um software 
 ### Comece criando um novo arquivo ou carregando um arquivo existente. Recomendamos que cada repositório inclua um , e .READMELICENSE.gitignore
 
 * ... ou crie um novo repositório na linha de comando
-echo "# myrepo" >> README.md
-	Aqui está o que cada parte do comando faz:
-	echo: É o comando que exibe o texto ou conteúdo especificado.
-	"# myrepo": É a mensagem que você deseja adicionar ao arquivo README.md.
-	>> README.md: Redireciona a saída do comando echo para o arquivo README.md, adicionando a mensagem ao final do arquivo.
-	Portanto, o comando completo echo "# myrepo" >> README.md adiciona a linha # myrepo ao arquivo README.md. É uma maneira rápida de criar ou atualizar um arquivo sem precisar abri-lo manualmente em um editor de texto.
-
 git init
 git add README.md
 git commit -m "first commit"
