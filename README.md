@@ -1,5 +1,5 @@
 # myCalendar
-Repositório para um projeto gerador de calendário online.
+### Repositório para um projeto gerador de calendário online.
 
 # Comandos GIT 
 O Git é um sistema de controlo de versões distribuído (DVCS). É um software de código aberto, usado principalmente no desenvolvimento de software
