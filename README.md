@@ -19,7 +19,7 @@ O Git é um sistema de controlo de versões distribuído (DVCS). É um software 
 	git commit -a -m "merge"
 	git push -u origin master
 
-* ... ou importar código de outro repositório
+## ... ou importar código de outro repositório
 
 Você pode inicializar esse repositório com código de um projeto Subversion, Mercurial ou TFS.
 
