@@ -17,7 +17,7 @@ git push -u origin main
 
 * ... ou enviar por push um repositório existente a partir da linha de comando
 
-git remote add origin https://github.com/loretoparisi/myrepo.git
+git remote add origin [c](https://github.com/mmstec/myRepositorio.git)
 git pull origin master --allow-unrelated-histories
 git commit -a -m "merge"
 git push -u origin master
