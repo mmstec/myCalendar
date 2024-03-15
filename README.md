@@ -17,7 +17,7 @@ O Git é um sistema de controlo de versões distribuído (DVCS). É um software 
 	git remote add origin [c](https://github.com/mmstec/myRepositorio.git)
 	git pull origin master --allow-unrelated-histories
 	git commit -a -m "merge"
-	git push -u origin master
+	git push -u origin main
 
 ## ... ou importar código de outro repositório
 
