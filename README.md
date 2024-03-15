@@ -474,13 +474,13 @@ Depois de encontrar o commit com problema, para retornar para o *HEAD* utilize:
 
 # Como contribuir
 
-1.Fork o projeto: Faça um fork deste repositório para a sua conta do GitHub.
-2.Clone o repositório: Clone o repositório forkado para o seu ambiente local.
-3.Crie uma branch: Crie uma branch para a sua contribuição.
-4.Faça as alterações: Faça as alterações desejadas no código, documentação ou qualquer outro aspecto do projeto.
-5.Faça commit das alterações: Faça commit das suas alterações com mensagens claras e concisas.
-6.Envie as alterações: Envie as alterações para a sua branch no repositório forkado.
-7Abra um Pull Request: Abra um Pull Request descrevendo suas alterações e o problema ou recurso que elas abordam.
+1. Fork o projeto: Faça um fork deste repositório para a sua conta do GitHub.
+2. Clone o repositório: Clone o repositório forkado para o seu ambiente local.
+3. Crie uma branch: Crie uma branch para a sua contribuição.
+4. Faça as alterações: Faça as alterações desejadas no código, documentação ou qualquer outro aspecto do projeto.
+5. Faça commit das alterações: Faça commit das suas alterações com mensagens claras e concisas.
+6. Envie as alterações: Envie as alterações para a sua branch no repositório forkado.
+7. Abra um Pull Request: Abra um Pull Request descrevendo suas alterações e o problema ou recurso que elas abordam.
 
 # Diretrizes para contribuição
 
